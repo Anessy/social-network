@@ -1,0 +1,10 @@
+.content {
+    text-decoration: underline;
+    text-decoration-color: darkslateblue;
+}
+
+.content img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
