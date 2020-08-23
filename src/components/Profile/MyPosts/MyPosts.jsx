@@ -2,13 +2,10 @@ import React, {component} from 'react';
 import Post from './Post/Post'
 import classes from './MyPosts.module.css';
 
-let postsData = [
-{id: 1, count: 6, post: 'Hello everybody'},
-{id: 2, count: 7, post: 'It is my message'}
-]
 
-let postsElement = postsData.map(post => <Post message={post.post} count={post.count}/>)
-const MyPosts = () => {
+
+const MyPosts = (props) => {
+    let postsElement = props.postsData.map(post => <Post message={post.post} count={post.count}/>)
     return (
         <div>
 
