@@ -1,0 +1,51 @@
+.content {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 2rem 3rem;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.smallAva {
+
+}
+
+.newPost {
+
+}
+
+.buttonPost {
+    padding: 0rem 7rem 2rem 7rem;
+    text-align: right;
+    display: grid;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.buttonPost button {
+    padding: 0.5rem 1.5rem;
+    grid-template-columns: 10fr 2fr;
+
+}
+
+.smallAva img {
+    width: 60%;
+}
+
+.newPost textarea {
+   border: none;
+    width: 90%;
+    font-family: Arial;
+    font-size: 14px;
+    outline: none;
+}
+
+textarea:focus {
+    border: 1px solid white
+}
+
+textarea:active {
+    border: 1px solid white;
+}
+
+.oldPosts {
+    padding: 2rem 3rem;
+}

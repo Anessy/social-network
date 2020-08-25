@@ -3,11 +3,14 @@
     grid-template-areas: /* как будут располагаться */ "h h " "n c ";
     grid-template-rows: 60px 1fr; /* сколько строк */
     grid-template-columns: 2fr 10fr; /* сколько колонок */
-    max-width: 1200px;
+    max-width: 100%;
+    padding: 0rem 9rem;
     margin: 0 auto;
+    background-color: gainsboro;
+
 }
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: forestgreen;
+    background-color: white;
 }

@@ -1,3 +1,15 @@
-.text {
+.portfolio {
     color: black;
+}
+
+.image img{
+    width: 100%;
+}
+
+.description {
+    padding: 1rem 2rem;
+}
+
+.description span {
+    text-shadow: 0px 1px 1px black;
 }

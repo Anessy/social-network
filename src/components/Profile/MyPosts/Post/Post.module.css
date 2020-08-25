@@ -8,3 +8,12 @@
     height: 60px;
     border-radius: 50%;
 }
+
+span {
+    margin-top: -2rem;
+}
+
+.forLikes {
+    width: 100%;
+    text-align: right;
+    padding-right: 7rem;
