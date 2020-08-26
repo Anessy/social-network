@@ -1,0 +1,13 @@
+.wrapper {
+    margin: 2rem auto;
+}
+
+.friendsPhoto img {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.friendsName {
+    color: white;
+    text-shadow: 1px 0px 0px #9eccff;
+}

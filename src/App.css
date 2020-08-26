@@ -1,12 +1,14 @@
 .app-wrapper {
     display: grid;
     grid-template-areas: /* как будут располагаться */ "h h " "n c ";
-    grid-template-rows: 60px 1fr; /* сколько строк */
+    grid-template-rows: 100px 1fr; /* сколько строк */
     grid-template-columns: 2fr 10fr; /* сколько колонок */
     max-width: 100%;
     padding: 0rem 9rem;
     margin: 0 auto;
-    background-color: gainsboro;
+    background-color: #e7e7e7;
+    min-height: 100vh;
+    grid-gap: 1vw;
 
 }
 

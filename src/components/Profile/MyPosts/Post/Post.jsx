@@ -5,12 +5,16 @@ const Post = (props) => {
     return (
         <div>
             <div className={classes.content}>
-                <div>
-                    <img src={require('../../../../img/ava.jpg')}/>
-                    <span>{props.message}</span>
+                <div className={classes.wrapper}>
+                    <div>
+                        <img src={require('../../../../img/ava.jpg')}/>
+                    </div>
+                    <div className={classes.oldPost}>
+                        {props.message}
+                    </div>
                 </div>
                 <div className={classes.forLikes}>
-                    <div>Like {props.count}</div>
+                    <div>♥ {props.count}</div>
                 </div>
             </div>
         </div>

@@ -16,4 +16,16 @@ span {
 .forLikes {
     width: 100%;
     text-align: right;
-    padding-right: 7rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+}
+
+.oldPost {
+    margin: auto 0;
+    outline: gold;
+    text-decoration: gold;
+    border-bottom: 1px gold;
+}
