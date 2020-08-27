@@ -7,10 +7,12 @@ const MyPosts = (props) => {
 
     let postsElement = props.postsData.map(post => <Post message={post.post} count={post.count}/>);
     let newPostElement = React.createRef();
+
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text);
+        props.addMyNewPost(text);
     }
+
     return (
         <div>
             <div className={classes.content}>

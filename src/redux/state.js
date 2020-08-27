@@ -34,4 +34,23 @@ let state = {
 
 }
 
+export let addMyNewPost = (postMessage) => {
+    let myNewPost = {
+        id: 5,
+        count: 0,
+        post: {postMessage}
+    }
+    state.profilePage.postsData.push(myNewPost);
+    console.log('myNewPost = ', myNewPost);
+}
+
+export let addNewMessage = (friendsMessage) => {
+    let newFriendsMessage = {
+        id : 5,
+        message : {friendsMessage}
+    }
+    state.dialogsPage.messagesData.push(newFriendsMessage);
+    console.log('newFriendsMessage = ', newFriendsMessage);
+}
+
 export default state;

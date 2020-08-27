@@ -17,10 +17,37 @@
     padding-left: 1rem;
 }
 
-.message {
-
-}
 
 .active {
     color: gold;
+}
+
+.forNewMessage {
+    background-color: #a9a4a6;
+    padding: 2rem;
+}
+
+.newMessage {
+    margin-left: 1rem;
+    width: 90%;
+
+}
+
+.newMessage textarea {
+    width: 100%;
+    height: 4rem;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-family: Arial;
+}
+
+.buttonSend {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.buttonSend button {
+    font-size: 15px;
+    padding: 0.5rem 2rem;
 }
