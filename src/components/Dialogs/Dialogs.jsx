@@ -13,6 +13,7 @@ const Dialogs = (props) => {
         let wrMessage = newMessage.current.value; /* получили текст с поля ввода */
         if (wrMessage !== '') {
             props.addNewMessage(wrMessage);
+            newMessage.current.value = '';
         }
     }
     return (
