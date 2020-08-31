@@ -5,17 +5,19 @@ import Message from './Message/Message';
 
 
 const Dialogs = (props) => {
-    let dialogsElement = props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
-    let messagesElement = props.state.messagesData.map(mes => <Message message={mes.message}/>)
+    let dialogsElement = props.dialogsPage.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
+    let messagesElement = props.dialogsPage.messagesData.map(mes => <Message message={mes.message}/>)
 
-    let newMessage = React.createRef(); /* создали ссылку на элемент*/
-    let sendMessage = () => { /* ф-ция срабатывающая при клике*/
-        let wrMessage = newMessage.current.value; /* получили текст с поля ввода */
-        if (wrMessage !== '') {
-            props.addNewMessage(wrMessage);
-            newMessage.current.value = '';
-        }
+    let newMessage = React.createRef();
+    let sendMessage = () => {
+            props.addNewMessage();
     }
+
+    let onMessageChange = () => {
+        let text = newMessage.current.value;
+        props.updateNewMessageText(text);
+    }
+
     return (
         <div>
             <div className={classes.dialogs}>
@@ -30,7 +32,9 @@ const Dialogs = (props) => {
 
             <div className={classes.forNewMessage}>
                 <div className={classes.newMessage}>
-                    <textarea ref={newMessage} placeholder={'Введите ваше сообщение...'}></textarea>
+                    <textarea ref={newMessage}
+                              onChange={onMessageChange}
+                              value={props.dialogsPage.newMessageText}/>
                     <div className={classes.buttonSend}>
                         <button onClick={sendMessage}>Send</button>
                     </div>

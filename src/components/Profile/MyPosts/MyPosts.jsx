@@ -1,4 +1,4 @@
-import React, {component} from 'react';
+import React from 'react';
 import Post from './Post/Post'
 import classes from './MyPosts.module.css';
 
@@ -9,14 +9,13 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        let text = newPostElement.current.value;
-        if (text !== '') {
-            props.addMyNewPost(text);
-            newPostElement.current.value = '';
-        }
-
+            props.addMyNewPost();
     }
 
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
     return (
         <div>
             <div className={classes.content}>
@@ -25,7 +24,9 @@ const MyPosts = (props) => {
                 </div>
                 <div className={classes.newPost}>
                     <p>Новый пост:</p>
-                    <textarea ref={newPostElement}></textarea>
+                    <textarea onChange={onPostChange}
+                              ref={newPostElement}
+                              value={props.newPostText}/>
                 </div>
                 <postsElement/>
             </div>

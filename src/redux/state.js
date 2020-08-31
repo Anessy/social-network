@@ -1,4 +1,4 @@
-import {entireThree} from '../render';
+let entireThree = () => { };
 
 let state = {
     dialogsPage : {
@@ -14,13 +14,15 @@ let state = {
             {id: 2, message: 'It is my message'},
             {id: 3, message: 'Yo'},
             {id: 4, message: 'Yo'}
-        ]
+        ],
+        newMessageText : 'Введите ваше сообщение...'
     },
     profilePage : {
         postsData: [
             {id: 1, count: 6, post: 'Hello everybody!'},
             {id: 2, count: 7, post: 'It is my first message :) '}
-        ]
+        ],
+        newPostText: 'Ваш новый пост...'
     },
     pageOfNav : {
         listOfFriends : [
@@ -34,25 +36,48 @@ let state = {
     }
 }
 
-export let addMyNewPost = (postMessage) => {
+export let addMyNewPost = () => {
     let myNewPost = {
         id: 5,
         count: 0,
-        post: `${postMessage}`
+        post: state.profilePage.newPostText
     }
-    state.profilePage.postsData.push(myNewPost);
+    if (state.profilePage.newPostText != '' && state.profilePage.newPostText != 'Ваш новый пост...') {
+        state.profilePage.postsData.push(myNewPost);
+        state.profilePage.newPostText = 'Ваш новый пост...';
+    } else {
+        state.profilePage.newPostText = 'Ваш новый пост...';
+    }
     entireThree(state);
 }
 
-export let addNewMessage = (friendsMessage) => {
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    entireThree(state); // перерисовали DOM
+
+}
+
+export let addNewMessage = () => {
     let newFriendsMessage = {
         id : 5,
-        message : `${friendsMessage}`
+        message : state.dialogsPage.newMessageText
     }
-    state.dialogsPage.messagesData.push(newFriendsMessage);
+    if (state.dialogsPage.newMessageText != '' && state.dialogsPage.newMessageText != 'Введите ваше сообщение...') {
+        state.dialogsPage.messagesData.push(newFriendsMessage);
+        state.dialogsPage.newMessageText = 'Введите ваше сообщение...';
+    } else (
+        state.dialogsPage.newMessageText = 'Введите ваше сообщение...'
+    )
     entireThree(state);
 }
 
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
+    entireThree(state);
+}
 
+export let subscribe = (observer) => {
+    entireThree = observer;
+}
 
 export default state;
