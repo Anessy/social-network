@@ -6,11 +6,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
-import {addMyNewPost} from './redux/state';
-import {addNewMessage} from './redux/state';
-import {updateNewPostText} from './redux/state';
-import {updateNewMessageText} from './redux/state';
-import {subscribe} from './redux/state'
+import store from './redux/state';
 
 
 
@@ -18,17 +14,14 @@ export let entireThree = (state) => {
     ReactDOM.render(
         <BrowserRouter>
             <App state={state}
-                 addMyNewPost={addMyNewPost}
-                 addNewMessage={addNewMessage}
-                 updateNewPostText={updateNewPostText}
-                 updateNewMessageText={updateNewMessageText}/>
+                 dispatch = {store.dispatch.bind(store)}/>
         </BrowserRouter>,
         document.getElementById('root')
     );
 }
 
-entireThree(state);
-subscribe(entireThree);
+entireThree(store.getState());
+store.subscribe(entireThree);
 
 
 // If you want your app to work offline and load faster, you can change

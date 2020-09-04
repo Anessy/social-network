@@ -5,7 +5,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={classes.portfolio}>
             <div className={classes.image}>
-                <img src="https://www.imgacademy.com/themes/custom/imgacademy/images/helpbox-contact.jpg"></img>
+                <img src="https://frontlinef.com/wp-content/uploads/2016/05/wallpapers-tropical-paradise-island-851x315-2.jpg"></img>
             </div>
             <div className={classes.description}>
                 <h3>Обо мне</h3>
